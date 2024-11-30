@@ -10,6 +10,7 @@
   <header>
     <h1>Привіт! Я Данііл Щербак</h1>
     <p>Розробник програмного забезпечення</p>
+    <img src="images/myphoto.jpg" alt="Данііл Щербак" class="profile-photo">
   </header>
 
   <nav>
@@ -17,17 +18,18 @@
       <li><a href="#about">Про мене</a></li>
       <li><a href="#skills">Навички</a></li>
       <li><a href="#portfolio">Портфоліо</a></li>
+      <li><a href="#certificates">Сертифікати</a></li>
       <li><a href="#contacts">Контакти</a></li>
     </ul>
   </nav>
 
   <main>
-    <section id="about">
+    <section id="about" class="section">
       <h2>Про мене</h2>
       <p>Я вчуся веб-розробці. У вільний час люблю займатися спортом та подорожувати.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="section">
       <h2>Мої навички</h2>
       <ul>
         <li>Розробка веб-додатків (HTML, CSS, JavaScript)</li>
@@ -36,7 +38,15 @@
       </ul>
     </section>
 
-    <section id="portfolio">
+    <section id="certificates" class="section">
+      <h2>Сертифікати</h2>
+      <ul>
+        <li><a href="path/to/english-certificate.jpg" target="_blank">Сертифікат англійської мови (B2)</a></li>
+        <li><a href="path/to/german-certificate.jpg" target="_blank">Сертифікат німецької мови (B1)</a></li>
+      </ul>
+    </section>
+
+    <section id="portfolio" class="section">
       <h2>Портфоліо</h2>
       <div class="portfolio-item">
         <h3>Шось цікаве</h3>
@@ -48,15 +58,51 @@
       </div>
     </section>
 
-    <section id="contacts">
+    <section id="experience" class="section">
+      <h2>Досвід стажування</h2>
+      <p>Під час стажування в компанії <strong>Обліксофт</strong> я працював як trainee back-end C# розробник, де працював з Entity Framework, MSSQL та ASP.NET.</p>
+    </section>
+
+    <section id="contacts" class="section">
       <h2>Контакти</h2>
-      <p>Email: <a href="mailto:example@mail.com">example@mail.com</a></p>
+      <p>Email: <a href="mailto:dserbak19@gmail.com">dserbak19@gmail.com</a></p>
       <p>Телефон: +380 123 456 789</p>
+      <ul class="social-media">
+        <li><a href="https://www.instagram.com/shcherbakdaniil/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100023462482755" target="_blank">Facebook</a></li>
+        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/Sw1fT3rZ" target="_blank">GitHub</a></li>
+      </ul>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2024 Щербак Данііл. Всі права захищені.</p>
   </footer>
+
+  <script>
+  document.querySelectorAll('nav ul li a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    
+    window.scrollTo({
+      top: targetSection.offsetTop - 50, 
+      behavior: 'smooth'
+    });
+
+    targetSection.classList.add('active');
+
+    setTimeout(() => {
+      targetSection.classList.add('fade-out');
+      setTimeout(() => {
+        targetSection.classList.remove('active', 'fade-out');
+      }, 300); 
+    }, 1000); 
+  });
+});
+
+  </script>
 </body>
 </html>
