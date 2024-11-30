@@ -75,7 +75,9 @@
       </ul>
     </section>
   </main>
-
+  
+  <button id="back-to-top" class="back-to-top">Вверх</button>
+  
   <footer>
     <p>&copy; 2024 Щербак Данііл. Всі права захищені.</p>
   </footer>
@@ -103,6 +105,21 @@
   });
 });
 
+const backToTopButton = document.getElementById("back-to-top");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    backToTopButton.style.display = "block"; 
+  } else {
+    backToTopButton.style.display = "none";
+  }
+};
+backToTopButton.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", 
+  });
+});
   </script>
 </body>
 </html>
