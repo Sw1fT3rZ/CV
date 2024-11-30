@@ -180,16 +180,17 @@ footer {
   background-color: #0078d7;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
+  border-radius: 50%;
+  padding: 15px 15px;
+  font-size: 1.5rem;
   cursor: pointer;
   display: none; 
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #back-to-top:hover {
   background-color: #005f99;
+  transform: scale(1.1); 
 }
 
 @media (max-width: 768px) {
